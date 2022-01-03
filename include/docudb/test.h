@@ -11,4 +11,12 @@ void Call() {
     std::cout << "Calling..." << std::endl;
 }
 
+class TestClass {
+public:
+    TestClass() = default;
+    ~TestClass() = default;
+
+    void DoWork() const;
+};
+
 #endif //DOCUDB_TEST_H

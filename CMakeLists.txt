@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(docudb VERSION 0.1 LANGUAGES CXX)
+project(DocuDB VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -14,4 +14,10 @@ set(DB_SRC_DIR "${PROJECT_SOURCE_DIR}/src")
 
 include_directories(SYSTEM include)
 
-add_executable(docudb src/main.cpp include/docudb/test.h)
+add_subdirectory(lib)
+
+add_executable(DocuDB src/main.cpp)
+add_executable(UnitTests tst/test.cpp tst/catch.hpp)
+
+target_link_libraries(DocuDB PUBLIC DocuLib)
+target_link_libraries(UnitTests PUBLIC DocuLib)
