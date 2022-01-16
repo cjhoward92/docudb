@@ -3,6 +3,7 @@
 //
 
 #include "docudb/test.h"
+#include "docudb/trie.h"
 
 #include <iostream>
 
